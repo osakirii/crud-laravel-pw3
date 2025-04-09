@@ -48,28 +48,34 @@
             </div>
             </nav>
             </div>
-            <div class="container"><h1>Cadastrar - Agendamento de Potenciais Clientes</h1>
+            <div class="container"><h1>Listar - Agendamento de Potenciais Clientes</h1>
             <h2>Sistema Utilizado para Agendamento de Serviços</h2>
         </div>
-                 <div class="container mb-3">
-                    <label for="inputName" class="form-label">Nome</label>
-                    <input type="text" class="form-control" name="nome" id="inputName1" value="{{ $cliente->nome }}">
-                </div>
-                <div class="container mb-3">
-                    <label for="inputPhoneNumber" class="form-label">Telefone</label>
-                    <input type="text" class="form-control" name="telefone" id="inputPhoneNumber1" value="{{ $cliente->telefone }}">
-                </div>
-                <div class="container mb-3">
-                    <label for="inputOrigin" class="form-label">Origem</label>
-                    <input type="text" class="form-control" name="origem" id="inputOrigin1" value="{{ $cliente->origem }}">
-                </div>
-                <div class="container mb-3">
-                    <label for="inputDate" class="form-label">Data de Contato</label>
-                    <input type="date" class="form-control" name="data" id="inputDate1" value="{{ $cliente->data }}">
-                </div>
-                <div class="container mb-3">
-                    <label for="inputObs" class="form-label">Observações</label>
-                    <textarea class="form-control" name="obs" id="inputObs1" rows="5" value="{{ $cliente->obs }}"></textarea>
-                </div>
+        <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Telefone</th>
+                <th scope="col">Origem</th>
+                <th scope="col">Origem</th>
+                <th scope="col">Data</th>
+                <th scope="col">Obs</th>
+                <th scope="col">Ações</th>
+                </tr>
+            </thead>
+            @foreach ($clientes as $cliente)
+            <tbody>
+                <tr>
+                <th scope="row">{{ $cliente->id }}</th>
+                <td>{{ $cliente->nome }}</td>
+                <td>{{ $cliente->telefone }}</td>
+                <td>{{ $cliente->origem}}</td>
+                <td>{{ $cliente->data}}</td>
+                <td>{{ $cliente->obs}}</td>
+                </tr>
+            </tbody>
+            @endforeach
+        </table>
     </body>
 </html>

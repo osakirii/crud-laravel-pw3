@@ -20,18 +20,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/listar', function(){
-    return view('listar');
-});
-
-Route::get('/editar', function(){
-    return view('editar');
-});
-
-Route::get('/deletar', function(){
-    return view('deletar');
-});
-
 Route::post('/cadastrar-cliente', function (Request $request) {
     Cliente::create([
         'nome' => $request->nome,
@@ -43,10 +31,10 @@ Route::post('/cadastrar-cliente', function (Request $request) {
     echo 'Produto criado com sucesso!';
 });
 
-Route::get('/listar-cliente/{id}', function($id){
+Route::get('/listar-cliente', function(){
 
-    $cliente = Cliente::find($id);
-    return view('listar', ['cliente' => $cliente]);
+    $clientes = Cliente::all();
+    return view('listar', ['clientes' => $clientes]);
 });
 
 Route::get('/editar-cliente/{id}', function($id){
