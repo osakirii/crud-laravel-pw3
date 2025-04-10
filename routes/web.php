@@ -28,7 +28,7 @@ Route::post('/cadastrar-cliente', function (Request $request) {
         'data' => $request->data,
         'obs' => $request->obs
     ]);
-    echo 'Produto criado com sucesso!';
+    echo 'Produto criado com sucesso! <br><button><a href="/">Voltar<a></button>';
 });
 
 Route::get('/listar-cliente', function(){
@@ -55,7 +55,7 @@ Route::post('/editar-cliente/{id}', function(Request $request, $id){
         'obs'=> $request->obs
     ]);
     
-    echo 'Produto editado com sucesso!';
+    echo 'Produto editado com sucesso! <br><button><a href="/listar-cliente">Voltar<a></button>';
 });
 
 Route::get('/deletar-cliente/{id}', function($id){
@@ -63,6 +63,6 @@ Route::get('/deletar-cliente/{id}', function($id){
     $cliente = Cliente::find($id);
     $cliente->delete();
 
-    echo 'Produto excluído com sucesso!';
+    echo 'Produto excluído com sucesso! <br><button><a href="/listar-cliente">Voltar<a></button>';
 
 });

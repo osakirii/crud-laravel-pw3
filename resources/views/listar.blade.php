@@ -18,6 +18,9 @@
             body {
                 font-family: 'Nunito', sans-serif;
             }
+            a {
+                text-decoration: none;
+            }
         </style>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -36,7 +39,7 @@
                     <a class="nav-link active" aria-current="page" href="/">Cadastrar</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/listar">Consultar</a>
+                    <a class="nav-link active" aria-current="page" href="/listar-cliente">Consultar</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/editar">Editar</a>
@@ -51,13 +54,13 @@
             <div class="container"><h1>Listar - Agendamento de Potenciais Clientes</h1>
             <h2>Sistema Utilizado para Agendamento de Serviços</h2>
         </div>
+        <div class="container">
         <table class="table">
             <thead>
                 <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Nome</th>
                 <th scope="col">Telefone</th>
-                <th scope="col">Origem</th>
                 <th scope="col">Origem</th>
                 <th scope="col">Data</th>
                 <th scope="col">Obs</th>
@@ -73,9 +76,11 @@
                 <td>{{ $cliente->origem}}</td>
                 <td>{{ $cliente->data}}</td>
                 <td>{{ $cliente->obs}}</td>
+                <td><a href="/editar-cliente/{{ $cliente->id }}">✍</a><a href="/deletar-cliente/{{ $cliente->id }}">❌</a></td>
                 </tr>
             </tbody>
             @endforeach
         </table>
+        </div>
     </body>
 </html>

@@ -36,7 +36,7 @@
                     <a class="nav-link active" aria-current="page" href="/">Cadastrar</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/listar">Consultar</a>
+                    <a class="nav-link active" aria-current="page" href="/listar-cliente">Consultar</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/editar">Editar</a>
